@@ -1,0 +1,40 @@
+{
+  "name": "opencode-js-bounty",
+  "version": "1.0.0",
+  "description": "Opencode plugin for automated JS bundle bug bounty analysis and UI tracking",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "commands",
+    "tracker-ui.html"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --outfile dist/index.js --target bun --external @opencode-ai/plugin && cp src/start-server.js dist/start-server.js",
+    "postinstall": "mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/opencode/commands && cp ./commands/*.md ${XDG_CONFIG_HOME:-$HOME/.config}/opencode/commands/ 2>/dev/null || true",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "bug-bounty",
+    "pentest"
+  ],
+  "author": "Ahmed Yasser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spxios/opencode-js-bounty-hunter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spxios/opencode-js-bounty-hunter/issues"
+  },
+  "homepage": "https://github.com/spxios/opencode-js-bounty-hunter#readme",
+  "license": "MIT",
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.1.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "bun": ">=1.0.0"
+  }
+}

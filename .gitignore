@@ -1,0 +1,7 @@
+node_modules/
+dist/
+tracker-state.json
+server.log
+tracker.log
+.env
+.DS_Store
