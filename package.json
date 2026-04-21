@@ -1,9 +1,12 @@
 {
   "name": "opencode-js-bounty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Opencode plugin for automated JS bundle bug bounty analysis and UI tracking",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "opencode-js-bounty": "./dist/start-server.js"
+  },
   "files": [
     "dist",
     "commands",

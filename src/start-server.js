@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { serve } from "bun";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
